@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PersamiAPI.Context;
@@ -22,6 +23,7 @@ namespace PersamiAPI.Controllers
         }
 
         [HttpGet("GetAllStudentResearch")]
+        [Authorize]
         public IActionResult GetTrStudentReserch()
         {
             if (_TrStudentReserchContext.TrStudentReserchModels == null)
